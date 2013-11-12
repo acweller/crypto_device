@@ -14,8 +14,9 @@
  *
  * -----------------------------------------------------------
  *
- * Alterações: Anderson Coelho Weller
+ * Alterações     : Anderson Coelho Weller
  * Funcionalidades: Inclusão de criptografia nos dispositivos.
+ * Data           : Nov/2013
  *
  * -----------------------------------------------------------
  *
