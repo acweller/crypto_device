@@ -15,15 +15,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% Configura o estilo, cores e fonte da apresentação %%%%%%%%%%%%%%%
-%%% http://deic.uab.es/~iblanes/beamer_gallery/ %%%
-
-%\usetheme{Marburg} %Marburg %Goettingen
-%\usetheme{PaloAlto}
-%\usetheme{Madrid}
 \usetheme{Darmstadt}
-\usecolortheme{rose}  %beaver}  %             % Configura a cor do tema
-\usefonttheme{structurebold}                  % Configura a fonte do tema
-\setbeamercovered{transparent}                % Configura textos transparentes
+\usecolortheme{rose}           % Configura a cor do tema
+\usefonttheme{structurebold}   % Configura a fonte do tema
+\setbeamercovered{transparent} % Configura textos transparentes
 
 %%% Configurações de texto %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[resetfonts]{cmap}  % Força o arquivo PDF ficar legível para pesquisa e cópia de texto
@@ -93,10 +88,10 @@
 % Apresenta o número da página atual junto com os botões de navegação
 % Obs.: As chaves vazias fazem o número ficar à direita dos botões.
 \addtobeamertemplate{navigation symbols}{}{%
-    \usebeamerfont{footline}%
+	\usebeamerfont{footline}%
 	\usebeamercolor[bg]{title}%
-    \hspace{1em}%
-    \insertframenumber/\inserttotalframenumber
+	\hspace{1em}%
+	\insertframenumber/\inserttotalframenumber
 }
 
 % Configura o Logotipo da apresentação
@@ -121,36 +116,10 @@
 }
 
 
-%%% Adiciona o logotipo no título de todas as páginas %%%%%%%%%%%%%%%
-%%% Desabilitado pois existe o comando "\logo" (Ver acima)
-%\addtobeamertemplate{frametitle}{}{%
-%%% Theme: Marburg x Goettingen _________________
-%%%\begin{textblock*}{100mm}(.91\textwidth,-.5cm)
-%%%\includegraphics[scale=.022]{logo-ic}
-%\end{textblock*}}
-
-
-
-
-%%% Configura uma página de TOC antes de cada seção %%%%%%%%%%%%%%%%%
-% %\AtBeginSection[]
-% %{
-  % \begin{frame}<beamer>
-    % \frametitle{Agenda}
-	% {
-		% %\tiny
-		% \tableofcontents %[currentsection] %,currentsubsection]
-	% }
-  % \end{frame}
-% %}
-
 \begin{frame}
 	\frametitle{Roteiro}
 	\tableofcontents
 \end{frame}
-
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -159,53 +128,6 @@
 \input{02Devices}
 \input{03Instalacao}
 \input{04CharDevices}
-
-%\input{07Conclusao}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Estrutura proposta pela Ariadne %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Introdução
-	% - Diga sobre o que você vai falar e
-	% - Porque esse tema é importante
-% Assunto abordado
-	% - Apresente o assunto
-	% - Ajude o ouvinte a assimilá-lo
-% Conclusão
-	% - Lembre ao ouvinte as partes essenciais do que foi apresentado
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Estrutura proposta pela Eliane %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% - Tema
-% - Referencia: só se for artigo
-% - Tópicos
-% - Motivação do trabalho:
-     % - qual a importância do trabalho na prática?
-     % - qual a relevância teórica do trabalho?
-% - Objetivo do trabalho
-     % - problema prático a ser resolvido
-     % - problema teórico a ser resolvido
-% - Técnicas ou trabalhos existentes
-% - Solução proposta
-     % - o que tem de inovador na solução com relação aos trabalhos existentes?
-     % - descrição da solução proposta
-           % se possível, com exemplos, no caso de apresentação de artigo
-% - Avaliação da solução proposta
-    % - como vai mostrar (ou foi demonstrado) que a solução proposta realmente resolve a contento os problemas práticos e teóricos citados no Objetivo: estudo de caso (qual domínio ou aplicação específica)? experimentos (que sujeitos)? avaliação qualitativa ou quantitativa? se quantitativa, quais medidas utilizou (ou vai utilizar)? outros?
-% - Pontos em aberto para trabalhos futuros (no caso de apresentação de artigo) ou
-   % Metodologia de trabalho
-% - Se for um artigo, acrescentar ainda:
-    % - pontos fortes: do que voce gostou no artigo?
-    % - pontos fracos: do que voce não gostou no artigo?
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
 
 
 %%% Referências %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
