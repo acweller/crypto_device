@@ -20,7 +20,8 @@ Para criação e carga do módulo 'scull':
 - scull_load: Script de carga dos dispositivos (/dev/scull0 a /dev/scull3).
 - scull_unload: Script de encerramento dos dispositivos.
 
-Para criação do módulo 'hello' (Subdiretório "hello" possui código para a criação de um módulo básico):
+Para criação do módulo 'hello':
+Subdiretório "hello" possui código para a criação de um módulo básico.
 - hello.c: Código do módulo exemplo.
 - Makefile: Arquivo de configuração do make.
 
@@ -43,6 +44,4 @@ Referências
 
 * Códificação da Criptografia XOR foi baseado no seguite artigo:
   * [C Tutorial - XOR Encryption](http://forum.codecall.net/topic/48889-c-tutorial-xor-encryption/ "Autor: ShadenSmith")
-
-Obs.: Outras referências foram acrescentadas ao arquivo "Apresentacao/01LinuxDevices.pdf".
 

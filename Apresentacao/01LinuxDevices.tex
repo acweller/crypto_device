@@ -1,0 +1,174 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%%% Gera a apresentação com todas as páginas, links e resumos por seção.
+\documentclass[hyphens]{beamer}
+%%
+%%%% Gera as transparências para os alunos (Somente as páginas de conteúdo).
+% \documentclass[trans,hyphens]{beamer}
+%%
+%%%% Cria um Handout (Folheto / Apostila)
+%%\documentclass[handout,hyphens]{beamer}
+%%\usepackage{pgfpages}
+%%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%%\pgfpagesuselayout{resize to}[a4paper,border shrink=5mm,landscape]
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Configura o estilo, cores e fonte da apresentação %%%%%%%%%%%%%%%
+\usetheme{Darmstadt}
+\usecolortheme{rose}           % Configura a cor do tema
+\usefonttheme{structurebold}   % Configura a fonte do tema
+\setbeamercovered{transparent} % Configura textos transparentes
+
+%%% Configurações de texto %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[resetfonts]{cmap}  % Força o arquivo PDF ficar legível para pesquisa e cópia de texto
+\usepackage{lmodern}           % Versão melhorada da fonte "Computer Modern"
+\usepackage[brazil]{babel}     % Configuração da língua
+\usepackage[utf8]{inputenc}    % Configuração dos caracteres de entrada para o TeX
+\usepackage[T1]{fontenc}       % Configuração dos caracteres de saída para o PDF
+
+\usepackage{textpos}           % Configurar o posicionamento dos textos
+\usepackage{amssymb}           % Lista de símbolos matemáticos
+
+%%-----------------------------------------%%
+%% Configuração para formatar código fonte %%
+%%-----------------------------------------%%
+%\setmonofont{Consolas} %to be used with XeLaTeX or LuaLaTeX
+% \usepackage[table]{xcolor}
+\definecolor{bluekeywords}{rgb}{0,0,1}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{redstrings}{rgb}{0.64,0.08,0.08}
+\definecolor{xmlcomments}{rgb}{0.5,0.5,0.5}
+\definecolor{types}{rgb}{0.17,0.57,0.68}
+
+\usepackage{listings}
+\usepackage{listingsutf8}
+\lstset{
+	% language=C,
+	inputencoding=utf8/latin1,
+	captionpos=b,
+	numbers=left,
+	numberstyle=\tiny,
+	%frame=lines,
+	showspaces=false,
+	showtabs=false,
+	tabsize=2,
+	breaklines=true,
+	showstringspaces=false,
+	breakatwhitespace=true,
+	escapeinside={(*@}{@*)},
+	commentstyle=\color{greencomments},
+	morekeywords={partial, var, value, get, set},
+	keywordstyle=\color{bluekeywords},
+	stringstyle=\color{redstrings},
+	basicstyle=\ttfamily\scriptsize,
+}
+%%-----------------------------------------%%
+
+
+%%% Configurações das imagens %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}          % Posibilitar a inserção de figuras
+\graphicspath{{img/}}          % Define o subdiretorio das figuras
+\usepackage{epstopdf}          % Permite a inserção de figuras do tipo .eps (Converte EPS para PDF)
+\usepackage{tikz}              % Permite incluir imagem na pagina / desenhar figuras
+
+%%% Habilita e configura os hiperlinks %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+
+
+%%% Configura as informações da apresentação %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Configura as informações da capa
+\title[\textit{Devices and Modules}]{Linux - \textit{Devices and Modules}}
+\author[Anderson Weller]{Anderson Coelho Weller}
+\institute[Unicamp]{Universidade Estadual de Campinas\\Instituto de Computação}
+\date{\today}
+
+
+% Apresenta o número da página atual junto com os botões de navegação
+% Obs.: As chaves vazias fazem o número ficar à direita dos botões.
+\addtobeamertemplate{navigation symbols}{}{%
+	\usebeamerfont{footline}%
+	\usebeamercolor[bg]{title}%
+	\hspace{1em}%
+	\insertframenumber/\inserttotalframenumber
+}
+
+% Configura o Logotipo da apresentação
+\logo{\includegraphics[scale=.014]{logo-ic}}
+
+\begin{document}
+
+%%% Monta a página de título / capa %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+\setbeamertemplate{navigation symbols}{}  %% Oculta a barra de ferramenta na capa
+	\begin{frame}
+
+		%%% Monta a capa da apresentação
+		\titlepage
+
+		%%% Inclui o logotipo da Unicamp (O logotipo do IC é inserido por "\logo")
+		\begin{textblock*}{100mm}(-.07\textwidth,.3cm)
+			\includegraphics[scale=.056]{uec}
+		\end{textblock*}
+		
+	\end{frame}
+}
+
+
+\begin{frame}
+	\frametitle{Roteiro}
+	\tableofcontents
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Páginas da apresentação %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{02Devices}
+\input{03Instalacao}
+\input{04CharDevices}
+
+
+%%% Referências %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Referências}
+\subsection*{Referências}
+{
+	%%% Ajusta o tamanho das imagens da bibliografia para 65%
+	\renewcommand{\pgfuseimage}[1]{\scalebox{.65}{\includegraphics{#1}}}
+	
+	\begin{frame}[allowframebreaks]
+		\frametitle{Referências}
+		\bibliographystyle{IEEEtran}
+		{
+			%\tiny  %%% Diminui o tamanho de letras da bibliografia
+			\scriptsize
+			%\footnotesize
+			%\small
+			%\normalsize
+			%\large
+			%\Large
+			%\LARGE
+			%\huge
+			%\Huge
+			\bibliography{90Ref_Linux}
+		}
+	\end{frame}
+}
+
+\subsection*{Agradecimentos}
+{ % Monta uma página de encerramento parecida com a de título
+	\setbeamertemplate{navigation symbols}{}
+	\author{\includegraphics[scale=.47]{thank-you}}
+	\institute{Anderson Coelho Weller}
+	\date{}
+	\begin{frame}
+		\titlepage
+		\begin{textblock*}{100mm}(-.07\textwidth,-0.7cm)
+			\includegraphics[scale=.056]{uec}
+		\end{textblock*}
+	\end{frame}
+}
+
+\end{document}
